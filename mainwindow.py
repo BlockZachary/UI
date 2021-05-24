@@ -11,10 +11,6 @@ from PyQt5.QtGui import QMovie, QPixmap
 
 
 class Ui_MainWindow(object):
-    # def __init__(self, MainWindow):
-    #     gif = QMovie("image: url(:/warning.gif)")
-    #     self.label_5.setMovie(gif)
-    #     gif.start()
 
     def setupUi(self, MainWindow):
         global timer
@@ -142,9 +138,13 @@ class Ui_MainWindow(object):
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
-
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+        self.Temp_threshold1 = self.Temp_Set1.text()
+        self.Temp_threshold2 = self.Temp_Set2.text()
+        self.Temp_threshold3 = self.Temp_Set3.text()
+        self.Temp_threshold4 = self.Temp_Set4.text()
 
     def retranslateUi(self, MainWindow):
         global timer
@@ -225,9 +225,27 @@ class Ui_MainWindow(object):
         超过所设置的阈值即启动报警信号，每隔5秒检查一次
         :return:
         """
+        self.Temp_Warning.setText("")
+        flag = [0 for _ in range(4)]  #这个3是设备的个数 0代表无异常
+        if self.Temp_Equip1.text() > self.Temp_threshold1:
+            flag[0] = 1
+            # self.Temp_Warning.setText("请注意，设备一温度异常！")
+        if self.Temp_Equip2.text() > self.Temp_threshold2:
+            flag[1] = 1
+            # self.Temp_Warning.append("请注意，设备二温度异常！")
+        if self.Temp_Equip3.text() > self.Temp_threshold3:
+            flag[2] = 1
+            # self.Temp_Warning.append("请注意，设备三温度异常！")
+        if self.Temp_Equip4.text() > self.Temp_threshold4:
+            flag[3] = 1
+            # self.Temp_Warning.append("请注意，设备四温度异常！")
 
+        for i in range(4):
+            if flag[i] == 1:
+                self.Temp_Warning.append(f"请注意，设备{i+1}的温度异常！")
 
-        self.Temp_Warning.setText("温度正常")
+        if flag == [0,0,0,0]:
+            self.Temp_Warning.setText("温度正常")
 
 
 

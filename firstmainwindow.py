@@ -7,7 +7,6 @@
 # WARNING! All changes made in this file will be lost!
 import os
 import sys
-
 import pymysql
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
