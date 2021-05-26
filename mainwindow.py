@@ -149,7 +149,7 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         global timer
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "温度监测系统 V1.0"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "温度监测系统 V2.0"))
         self.Title.setText(_translate("MainWindow", "欢迎使用牧场环境与个体温度监测系统"))
         self.Temp_Field.setText(_translate("MainWindow", "温度场显示"))
         self.Label_Equip1.setText(_translate("MainWindow", "设备1温度 "))
@@ -304,7 +304,7 @@ def main_UI():
     ui = Ui_MainWindow()  # ui是Ui_MainWindow()类的实例化对象
     ui.setupUi(MainWindow)  # 执行类中的setupUi方法，方法的参数是第二步中创建的QMainWindow
     MainWindow.show()  # 执行QMainWindow的show()方法，显示这个QMainWindow
-    sys.exit(app.exec_())  # 使用exit()或者点击关闭按钮退出QApplication
+    sys.exit(app.exec_())  # 使用exit()或者点击关闭按钮退出QApplication 
 
 
 if __name__ == "__main__":

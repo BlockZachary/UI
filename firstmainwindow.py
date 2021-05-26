@@ -67,8 +67,8 @@ class Ui_firstMainWindow(object):
 
     def retranslateUi(self, firstMainWindow):
         _translate = QtCore.QCoreApplication.translate
-        firstMainWindow.setWindowTitle(_translate("firstMainWindow", "请登录"))
-        self.label.setText(_translate("firstMainWindow", "请登录温度监测系统"))
+        firstMainWindow.setWindowTitle(_translate("firstMainWindow", "温度监测V2.0"))
+        self.label.setText(_translate("firstMainWindow", "欢迎登录温度监测系统"))
         self.label_2.setText(_translate("firstMainWindow", "用户名"))
         self.label_3.setText(_translate("firstMainWindow", "密 码"))
         self.login.setText(_translate("firstMainWindow", "登录"))
